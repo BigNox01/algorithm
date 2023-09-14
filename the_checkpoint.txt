@@ -1,0 +1,32 @@
+ALGORITHM sentence_reading
+VAR
+    Sentence_count,a : INTEGER
+    words_count:INTEGER
+    vowels_count:INTEGER
+    i:INTEGER
+    sentence:STRING
+BEGIN
+    read(sentence)
+    a:=sentence.length
+    Sentence_count:=0
+    i:=0
+    FOR i FROM 0 TO a STEP step  DO
+        Sentence_count=Sentence_count+1
+    END_FOR
+    write(Sentence_count)
+    words_count=0
+    FOR i FROM 0 TO a STEP step  DO
+        IF (char[i]==" ") THEN
+            words_count=words_count+1
+        END_IF
+    END_FOR
+    write(words_count)
+    vowels_count:=0
+    WHILE (i<=a) DO
+        IF (char[i].toLowerCase="a"||"e"||"i"||"o"||"u") THEN
+            vowels_count=vowels_count+1
+        END_IF
+        i:=i+1
+    END_WHILE
+    write(vowels_count)
+END

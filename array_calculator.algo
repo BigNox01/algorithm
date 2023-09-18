@@ -1,0 +1,96 @@
+ALGORITHM array_comparaision
+VAR
+    i:INTEGER
+    j:INTEGER
+    arrayI : ARRAY_OF FLOAT[i];
+    arrayJ : ARRAY_OF FLOAT[j];
+    arrI: ARRAY_OF FLOAT[length];
+    arrJ: ARRAY_OF FLOAT[length];
+    first_sum:FLOAT
+    second_sum:FLOAT
+    result:FLOAT
+BEGIN
+    write("how many elemnts would you like the first array to have");
+    read(i)
+    write(fill1:=array-filler1(arrayI,i))
+    write("how many elemnts would you like the second array to have")
+    read(j)
+    write(fill2=array-filler2(arrayJ,j))
+    arrI:=blank_maker(arrayI,arrayJ)[0]
+    arrJ:=blank_maker(arrayI,arrayJ)[1]
+    first_sum:=first_array(arrI)
+    second_sum:=second_array(arrJ)
+    write("the total sum will be")
+    write(result:=first_sum+second_sum)
+END
+
+FUNCTION array-filler1(arrayA : ARRAY_OF FLOAT[length],A:INTEGER) : array
+VAR
+    A:INTEGER
+    arrayA : ARRAY_OF FLOAT[A];
+BEGIN
+    A:=0
+    FOR A FROM 0 TO arrayA.length-1 STEP step  DO
+        read(arrayA[i])
+    END_FOR
+    RETURN arrayA ;
+END
+
+FUNCTION array-filler2(arrayB : ARRAY_OF FLOAT[length],B:INTEGER) : array
+VAR
+    B:INTEGER
+    arrayB: ARRAY_OF FLOAT[B];
+BEGIN
+    FOR B FROM 0 TO arrayB.length-1 STEP step  DO
+        read(arrayB[B])
+    END_FOR
+    RETURN arrayB;
+END
+var arr1 := blank_maker(x,y)[1]
+FUNCTION blank_maker(array1: ARRAY_OF FLOAT[length],array2: ARRAY_OF FLOAT[length];) : array
+VAR
+    I:INTEGER
+    J:INTEGER
+    occ:INTEGER
+BEGIN
+    occ:=0
+    FOR I FROM 0 TO array1.length-1 STEP step  DO
+    FOR K FROM 0 TO array2.length-1 STEP step  DO
+        IF (array1[i]==array2[K]) THEN
+        occ:=+1
+        END_IF
+        IF (occ!=0) THEN
+            array1[i]:=0
+        END_IF
+    END_FOR
+    END_FOR
+    RETURN array1,array2;
+END
+
+FUNCTION first_array(array:ARRAY_OF FLOAT[D];) : FLOAT
+VAR
+    array : ARRAY_OF FLOAT[D];
+    i:INTEGER
+    sum:INTEGER
+BEGIN
+    i:=0
+    FOR i FROM 0 TO array.length-1 STEP step  DO
+        IF (array1[i]!=0) THEN
+            sum1:=+array[i]
+        END_IF
+    END_FOR
+    RETURN sum1 ;
+END
+
+FUNCTION second_array(F:ARRAY_OF FLOAT[length];) : FLOAT
+VAR
+    F: ARRAY_OF FLOAT[length];
+    i:INTEGER
+BEGIN
+    FOR i FROM 0 TO F.length-1 STEP step  DO
+        IF (F[i]!=0) THEN
+            sum2:=+F[i]
+        END_IF
+    END_FOR
+    RETURN sum2 ;
+END

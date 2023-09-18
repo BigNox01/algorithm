@@ -1,6 +1,40 @@
 ALGORITHM algorithm_name
 VAR
-    set_declarations
+    
 BEGIN
-    set_instructions
+    PROCEDURE orthogonal_checker(parameters)
+    VAR
+        final_sum:FLOAT
+        the_sum:FLOAT
+        arrayA : ARRAY_OF FLOAT[3];
+        arrayB : ARRAY_OF FLOAT[3];
+        i:INTEGER
+    BEGIN
+        write("how many pairs of vectors would you like?")
+        read(i)
+        FOR i FROM 0 TO i STEP step  DO
+            final_sum:=array_maker(the_sum)
+            IF (final_sum==0) THEN
+                write("these two vectors are orthogonal")
+            ELSE
+                write("these two vectors are not orthogonal")
+            END_IF
+        END_FOR
+    END
+END
+FUNCTION array_maker(sum:FLOAT) : FLOAT
+VAR
+    array1: ARRAY_OF FLOAT[3];
+    array2: ARRAY_OF FLOAT[3];
+    i:INTEGER
+    y:INTEGER
+BEGIN
+    y:=0
+        FOR y FROM 0 TO 3 STEP step  DO
+            read(array1[y])
+            read(array2[y])
+            sum:=+(array1[y]*array2[y])
+        END_FOR
+    END_FOR
+    RETURN sum ;
 END

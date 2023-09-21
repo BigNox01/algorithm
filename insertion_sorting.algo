@@ -1,0 +1,24 @@
+ALGORITHM insetion_sorting
+VAR
+    n,i:INTEGER
+    array1 : ARRAY_OF INTEGER[n];
+BEGIN
+    write("how many elements would you like to have in this array?")
+    read(n)
+    write("please input your elements")
+    REPEAT
+        read(array1[i])
+    UNTIL (i=array1.length-1)
+    FOR i FROM 0 TO array.length-1 STEP step  DO
+        REPEAT
+        current:=array1[i]
+        IF (current>array1[i+1]) THEN
+            replaced:=array1[i]
+            array1[i]:=array1[i+1]
+            array1[i+1]=replaced
+        END_IF
+        i++
+        UNTIL (i=array1.length-1)
+    END_FOR
+    write(array1)
+END
